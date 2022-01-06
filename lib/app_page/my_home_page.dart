@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:market_app1/app_page/cart_page.dart';
-import 'package:market_app1/app_page/product_page.dart';
+import 'package:market_app1/app_page/product_categories_tabbar.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -14,7 +14,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int currentPageNo = 0;
   @override
   void initState() {
-    _icerik = const [ProductsPage(), CartPage()];
+    _icerik = const [ProductCategoriesTabbar(), CartPage()];
     super.initState();
   }
 

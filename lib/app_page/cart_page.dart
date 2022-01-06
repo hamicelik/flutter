@@ -16,9 +16,9 @@ class CartPage extends StatelessWidget {
               )),
         ),
         productListTile("1", "Chocolate", "2 pieces* 3.5 TL", "7 TL"),
-        productListTile("1", "Box milk", "4 pieces* 8 TL", "32 TL"),
-        productListTile("1", "Flour", "2 pieces* 20 TL", "40 TL"),
-        productListTile("1", "Water", "1 piece* 3.5 TL", "3.5 TL"),
+        productListTile("2", "Box milk", "4 pieces* 8 TL", "32 TL"),
+        productListTile("3", "Flour", "2 pieces* 20 TL", "40 TL"),
+        productListTile("4", "Water", "1 piece* 3.5 TL", "3.5 TL"),
 
         //? total price section
         Align(
@@ -74,12 +74,22 @@ class CartPage extends StatelessWidget {
     );
   }
 
-  ListTile productListTile(String lineNumber, String productNo,
-          String productPrice, String total) =>
+  Widget productListTile(
+      String lineNumber, String productNo, String productPrice, String total) {
+    return Column(children: [
       ListTile(
         leading: Text(lineNumber),
         title: Text(productNo),
         subtitle: Text(productPrice),
         trailing: Text(total),
-      );
+      ),
+      const Divider(
+        color: Colors.grey,
+        thickness: 2,
+        endIndent: 15,
+        indent: 15,
+        height: 25,
+      )
+    ]);
+  }
 }

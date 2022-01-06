@@ -22,12 +22,19 @@ class _ProductCategoriesTabbarState extends State<ProductCategoriesTabbar>
   Widget build(BuildContext context) {
     return Column(
       children: [
-        TabBar(controller: tvcontrol, tabs: const [
-          Text("Staple food"),
-          Text("Candy"),
-          Text("Beverages"),
-          Text("Cleaning equipment")
-        ]),
+        TabBar(
+            controller: tvcontrol,
+            indicatorColor: Colors.red,
+            labelColor: Colors.red,
+            labelStyle: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+            unselectedLabelColor: Colors.grey,
+            isScrollable: true,
+            tabs: const [
+              Text("Temel Gıda"),
+              Text("Şekerleme"),
+              Text("İçecekler"),
+              Text("Temizlik Ürünleri")
+            ]),
         Expanded(
           child: TabBarView(controller: tvcontrol, children: const [
             ProductsPage(
