@@ -132,8 +132,7 @@ class _ProductsPageState extends State<ProductsPage> {
             DescriptionButtonPage.degreaser)
       ];
     }
-    // ignore: avoid_print
-    print("init state çalıştı");
+  
     super.initState();
   }
 
