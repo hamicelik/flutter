@@ -23,6 +23,8 @@ class ProductDetailPage extends StatelessWidget {
         backgroundColor: Colors.white,
         body: ListView(
           children: [
+//? Product image and back arrow button
+
             Stack(
               children: [
                 Hero(
@@ -46,6 +48,7 @@ class ProductDetailPage extends StatelessWidget {
                     icon: const Icon(Icons.arrow_back))
               ],
             ),
+
             Column(
               children: [
                 const SizedBox(

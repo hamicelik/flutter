@@ -159,33 +159,8 @@ class _ProductsPageState extends State<ProductsPage> {
             ]),
         child: Column(
           children: [
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => ProductDetailPage(
-                              urlForImage: urlForImage,
-                              productPrice: productPrice,
-                              productName: productName,
-                              productId: productId,
-                              stock: stock,
-                              description: description,
-                            )));
-              },
-              child: Hero(
-                tag: productId,
-                child: Container(
-                  height: 120,
-                  child: Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: Image(
-                        image: NetworkImage(urlForImage),
-                        fit: BoxFit.cover,
-                      )),
-                ),
-              ),
-            ),
+            productCartGestureDetector(urlForImage, productPrice, productName,
+                productId, stock, description),
             const SizedBox(
               height: 8,
             ),
@@ -199,6 +174,42 @@ class _ProductsPageState extends State<ProductsPage> {
                     fontWeight: FontWeight.bold,
                     color: Colors.green)),
           ],
+        ),
+      ),
+    );
+  }
+
+  GestureDetector productCartGestureDetector(
+      String urlForImage,
+      String productPrice,
+      String productName,
+      String productId,
+      bool stock,
+      String description) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => ProductDetailPage(
+                      urlForImage: urlForImage,
+                      productPrice: productPrice,
+                      productName: productName,
+                      productId: productId,
+                      stock: stock,
+                      description: description,
+                    )));
+      },
+      child: Hero(
+        tag: productId,
+        child: SizedBox(
+          height: 120,
+          child: Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: Image(
+                image: NetworkImage(urlForImage),
+                fit: BoxFit.cover,
+              )),
         ),
       ),
     );

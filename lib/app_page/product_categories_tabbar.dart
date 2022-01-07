@@ -26,7 +26,8 @@ class _ProductCategoriesTabbarState extends State<ProductCategoriesTabbar>
             controller: tvcontrol,
             indicatorColor: Colors.red,
             labelColor: Colors.red,
-            labelStyle: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+            labelStyle:
+                const TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
             unselectedLabelColor: Colors.grey,
             isScrollable: true,
             tabs: const [
